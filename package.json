@@ -1,0 +1,37 @@
+{
+  "name": "widgetsjs",
+  "version": "0.0.2-nightly.1",
+  "description": "A tiny library for building websites with widgets",
+  "main": "dist/index,js",
+  "scripts": {
+    "test": "cd test && parcel build components/index.html --public-url . && mocha --require ts-node/register --timeout 999999 **/*.spec.ts",
+    "build": "tsc",
+    "nightly": "bump prerelease --preid nightly --push --commit --tag"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neutrino2211/widgetsjs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neutrino2211/widgetsjs/issues"
+  },
+  "homepage": "https://github.com/neutrino2211/widgetsjs#readme",
+  "devDependencies": {
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^12.0.2",
+    "@types/selenium-webdriver": "^4.0.0",
+    "chromedriver": "^74.0.0",
+    "mocha": "^6.1.4",
+    "parcel": "^1.12.3",
+    "selenium-webdriver": "^4.0.0-alpha.1",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.4.5",
+    "version-bump-prompt": "^5.0.1"
+  },
+  "dependencies": {
+    "events": "^3.0.0"
+  }
+}
