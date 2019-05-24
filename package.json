@@ -1,6 +1,6 @@
 {
   "name": "widgetsjs",
-  "version": "0.0.2-nightly.5",
+  "version": "0.0.2-nightly.6",
   "description": "A tiny library for building websites with a widget based component system",
   "main": "dist/index,js",
   "scripts": {
@@ -24,10 +24,12 @@
   },
   "homepage": "https://github.com/neutrino2211/widgetsjs#readme",
   "devDependencies": {
+    "@types/fs-extra": "^7.0.0",
     "@types/mocha": "^5.2.6",
     "@types/node": "^12.0.2",
     "@types/selenium-webdriver": "^4.0.0",
     "chromedriver": "^74.0.0",
+    "fs-extra": "^8.0.1",
     "mocha": "^6.1.4",
     "parcel": "^1.12.3",
     "selenium-webdriver": "^4.0.0-alpha.1",
