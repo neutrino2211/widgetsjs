@@ -21,6 +21,5 @@ export class StatelessWidget extends Widget {
         this.innerHTML = this._render(componentState);
         this.onMount()
     }
-
-    public onMount(){}
+    
 }

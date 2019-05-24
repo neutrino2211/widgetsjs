@@ -4,7 +4,7 @@
   "description": "A tiny library for building websites with widgets",
   "main": "dist/index,js",
   "scripts": {
-    "test": "cd test && parcel build components/index.html --public-url . && mocha --require ts-node/register --timeout 999999 **/*.spec.ts",
+    "test": "cd test && parcel build components/index.html --public-url . && mocha --require ts-node/register --timeout 999999 **/*.spec.ts && npm run clean",
     "build": "tsc",
     "publish-nightly": "npm publish --tag nightly",
     "bump-nightly": "bump prerelease --preid nightly --push --commit --tag",
