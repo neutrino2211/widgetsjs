@@ -33,7 +33,6 @@ var StatelessWidget = /** @class */ (function (_super) {
         this.innerHTML = this._render(componentState);
         this.onMount();
     };
-    StatelessWidget.prototype.onMount = function () { };
     return StatelessWidget;
 }(Widget_1.Widget));
 exports.StatelessWidget = StatelessWidget;
