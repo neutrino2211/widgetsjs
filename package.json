@@ -1,14 +1,16 @@
 {
   "name": "widgetsjs",
-  "version": "0.0.2-nightly.2",
-  "description": "A tiny library for building websites with widgets",
+  "version": "0.0.2-nightly.3",
+  "description": "A tiny library for building websites with a widget based component system",
   "main": "dist/index,js",
   "scripts": {
     "test": "cd test && parcel build components/index.html --public-url . && mocha --require ts-node/register --timeout 999999 **/*.spec.ts && npm run clean",
     "build": "tsc",
     "publish-nightly": "npm publish --tag nightly",
     "bump-nightly": "bump prerelease --preid nightly --push --commit --tag",
-    "nightly": "npm run bump-nightly && npm run publish-nightly"
+    "nightly": "npm run build && npm run bump-nightly && npm run publish-nightly",
+    "clean": "ts-node scripts/clean.ts all",
+    "clean-artifacts": "ts-node scripts/clean.ts artifacts"
   },
   "repository": {
     "type": "git",
