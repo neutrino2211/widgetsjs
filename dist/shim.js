@@ -1,3 +1,4 @@
+"use strict";
 /**
  * @license
  * Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
@@ -7,13 +8,14 @@
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
  */
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * This shim allows elements written in, or compiled to, ES5 to work on native
  * implementations of Custom Elements v1. It sets new.target to the value of
  * this.constructor so that the native HTMLElement constructor can access the
  * current under-construction element's definition.
  */
-(function () {
+function shim() {
     var _window = window;
     if (
     // No Reflect, no classes, no need for shim because native custom elements
@@ -32,5 +34,6 @@
     HTMLElement.prototype = BuiltInHTMLElement.prototype;
     HTMLElement.prototype.constructor = HTMLElement;
     Object.setPrototypeOf(HTMLElement, BuiltInHTMLElement);
-})();
+}
+exports.shim = shim;
 //# sourceMappingURL=shim.js.map

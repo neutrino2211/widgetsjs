@@ -33,6 +33,9 @@ var Widget = /** @class */ (function (_super) {
     Widget.prototype.$ref = function (name) {
         return utils_1.getRef(name);
     };
+    Widget.prototype.$child = function (selector) {
+        return this.root.querySelector(selector);
+    };
     Widget.prototype.onMount = function () { };
     Widget.prototype.onDismount = function () { };
     Widget.prototype._render = function (state) {

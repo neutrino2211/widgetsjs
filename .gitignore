@@ -65,3 +65,6 @@ test/dist
 
 # parcel build artifacts
 .cache
+
+# tsc build directory
+dist

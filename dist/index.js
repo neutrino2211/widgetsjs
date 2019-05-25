@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-require("./shim.js");
+var shim_1 = require("./shim");
+shim_1.shim();
 var utils_1 = require("./utils");
 exports.useComponent = utils_1.useComponent;
 exports.getRef = utils_1.getRef;

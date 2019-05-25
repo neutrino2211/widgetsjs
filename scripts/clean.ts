@@ -1,4 +1,5 @@
 import { join } from "path";
+import { emptyDirSync } from "fs-extra";
 import * as rimraf from "rimraf";
 
 const cleanType = process.argv[2]
@@ -24,7 +25,7 @@ const cleaners = {
     artifacts: function(){
         this["tests"]();
         rimraf.sync(join(process.cwd(), ".cache"))
-        rimraf.sync(join(process.cwd(),"dist"))
+        emptyDirSync(join(process.cwd(),"dist"))
     }
 }
 

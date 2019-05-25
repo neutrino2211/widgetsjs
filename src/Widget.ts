@@ -23,6 +23,10 @@ export class Widget extends Component {
         return getRef(name);
     }
 
+    $child(selector: string): HTMLElement {
+        return this.root.querySelector(selector);
+    }
+
     public onMount(){}
     public onDismount(){}
 

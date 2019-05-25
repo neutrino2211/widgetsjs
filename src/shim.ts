@@ -14,7 +14,7 @@
  * this.constructor so that the native HTMLElement constructor can access the
  * current under-construction element's definition.
  */
-(function() {
+export function shim () {
     const _window = <any>window;
     if (
       // No Reflect, no classes, no need for shim because native custom elements
@@ -35,4 +35,4 @@
     HTMLElement.prototype = BuiltInHTMLElement.prototype;
     HTMLElement.prototype.constructor = HTMLElement;
     Object.setPrototypeOf(HTMLElement, BuiltInHTMLElement);
-  })();
+  }
