@@ -1,6 +1,6 @@
 {
   "name": "widgetsjs",
-  "version": "0.0.2-nightly.6",
+  "version": "0.0.2-nightly.7",
   "description": "A tiny library for building websites with a widget based component system",
   "main": "dist/index,js",
   "scripts": {
@@ -16,8 +16,12 @@
     "type": "git",
     "url": "git+https://github.com/neutrino2211/widgetsjs.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "Widget",
+    "Library",
+    "Component"
+  ],
+  "author": "Tsowa Mainasara Al-amin <neutrino2211@gmail.com> (https://github.com/neutrino2211)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/neutrino2211/widgetsjs/issues"
