@@ -8,9 +8,9 @@ export class DifferComponent extends StatefulWidget {
     }
 
     onMount(){
-        this.$child('#btn').addEventListener("click",()=>{
+        this.$child<HTMLButtonElement>('#btn').addEventListener("click",()=>{
             this.setState({
-                text: (<HTMLInputElement>this.$child("#input")).value
+                text: (this.$child<HTMLInputElement>("#input")).value
             })
         })
     }
