@@ -31,7 +31,6 @@ export class StatefulWidget extends Widget {
             let _state = Object.assign(state, componentState);
             this.beforeRender()
             this.runPlugins(this._render(_state));
-            this.emit('load')
             this.afterRender()
         })
         this.emit('load')

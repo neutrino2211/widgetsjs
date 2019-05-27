@@ -87,7 +87,7 @@ describe("widgetsjs", ()=>{
             await btn2.click()
             // await timeout(100);
 
-            btn2 = await widget.findElement(selenium.By.id("minus"))
+            // btn2 = await widget.findElement(selenium.By.id("minus"))
             await btn2.click()
 
             p = await widget.findElement(selenium.By.id("num"))
@@ -100,6 +100,32 @@ describe("widgetsjs", ()=>{
             await btn2.click()
             const peerComp = await driver.findElement(selenium.By.tagName("peer-component"));
             assert.equal(await peerComp.getText(), "The number is -1");
+        })
+    })
+
+    describe("#Diffing plugin", ()=>{
+        let widget: selenium.WebElement;
+
+        beforeEach((done)=>{
+            driver.findElement(selenium.By.tagName("differ-component")).then(w => {
+                widget = w;
+                done()
+            })
+        })
+
+        it("should initially have <h1>Hello World!</h1>", async()=>{
+            const h1 = await widget.findElement(selenium.By.tagName("h1"))
+            assert.deepEqual(await h1.getText(),"Hello World!")
+        })
+
+        it("should update only h1 when state changes",async()=>{
+            const btn = await widget.findElement(selenium.By.id("btn"))
+            const h1 = await widget.findElement(selenium.By.tagName("h1"))
+            const input = await widget.findElement(selenium.By.id("input"))
+            await input.sendKeys("W","I","D","G","E","T","S");
+            await btn.click()
+            assert.equal(await h1.getText(),"WIDGETS")
+            assert.equal(await input.getAttribute("value"), "WIDGETS")
         })
     })
 
