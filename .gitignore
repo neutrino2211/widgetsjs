@@ -68,3 +68,6 @@ test/dist
 
 # tsc build directory
 dist
+
+# browser test
+browser-test
