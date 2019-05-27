@@ -1,6 +1,6 @@
 {
   "name": "widgetsjs",
-  "version": "0.0.2-nightly.8",
+  "version": "0.0.2-nightly.9",
   "description": "A tiny library for building websites with a widget based component system",
   "main": "dist/index,js",
   "scripts": {
@@ -9,7 +9,7 @@
     "publish-nightly": "npm publish --tag nightly",
     "bump-nightly": "bump prerelease --preid nightly --push --commit --tag",
     "bump-patch": "bump patch --push --commit --tag",
-    "nightly": "npm run build && npm run bump-nightly && npm run publish-nightly",
+    "nightly": "npm run build && npm run bump-nightly && npm run clean-artifacts && npm run publish-nightly",
     "patch": "npm run build && npm run bump-patch && npm publish",
     "clean": "ts-node scripts/clean.ts all",
     "clean-artifacts": "ts-node scripts/clean.ts artifacts"
