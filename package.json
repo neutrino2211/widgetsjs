@@ -1,6 +1,6 @@
 {
   "name": "widgetsjs",
-  "version": "0.0.2-nightly.16",
+  "version": "0.0.2-nightly.17",
   "description": "A tiny library for building websites with a widget based component system",
   "main": "dist/index.js",
   "scripts": {
