@@ -9,7 +9,7 @@
     "publish-nightly": "npm publish --tag nightly",
     "bump-nightly": "bump prerelease --preid nightly --push --commit --tag",
     "bump-patch": "bump patch --push --commit --tag",
-    "nightly": "npm run build && npm run bump-nightly && npm run clean-artifacts && npm run publish-nightly",
+    "nightly": "npm run build && npm run bump-nightly && npm run clean && npm run publish-nightly",
     "patch": "npm run build && npm run bump-patch && npm publish",
     "clean": "ts-node scripts/clean.ts all",
     "clean-artifacts": "ts-node scripts/clean.ts artifacts"

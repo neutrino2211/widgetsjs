@@ -15,10 +15,12 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var events_1 = require("events");
 var Widget_1 = require("./Widget");
+var diffing_1 = require("./plugins/diffing");
 var StatefulWidget = /** @class */ (function (_super) {
     __extends(StatefulWidget, _super);
     function StatefulWidget(state, transformers) {
         var _this = _super.call(this, state, transformers) || this;
+        _this.plugins = [new diffing_1.DiffingPlugin(_this)];
         _this.eventEmitter = new events_1.EventEmitter();
         _this.setState(state);
         _this.on('load', _this.onMount);
@@ -36,17 +38,22 @@ var StatefulWidget = /** @class */ (function (_super) {
         var componentState = Object.assign({}, this.state);
         state = Object.assign(componentState, state);
         this.beforeRender();
-        this.innerHTML = this._render(state);
+        this.runPlugins(this._render(state));
         this.on('render', function (state) {
             componentState = Object.assign({}, _this.cachedState || _this.state);
             var _state = Object.assign(state, componentState);
             _this.beforeRender();
-            _this.innerHTML = _this._render(_state);
-            _this.emit('load');
+            _this.runPlugins(_this._render(_state));
             _this.afterRender();
         });
         this.emit('load');
         this.afterRender();
+    };
+    StatefulWidget.prototype.runPlugins = function (innerHTML) {
+        for (var _i = 0, _a = this.plugins; _i < _a.length; _i++) {
+            var plugin = _a[_i];
+            plugin.run(innerHTML);
+        }
     };
     Object.defineProperty(StatefulWidget.prototype, "emitter", {
         get: function () {
