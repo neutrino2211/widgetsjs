@@ -3,10 +3,11 @@ import { EventEmitter } from "events";
 import { Widget } from "./Widget";
 import { DiffingPlugin } from "./plugins/diffing";
 import { Plugin } from "./plugins/plugin";
+import { TemplateParserPlugin } from "./plugins/templatePraser";
 
 export class StatefulWidget extends Widget {
     protected cachedState: State;
-    private plugins: Array<Plugin> = [new DiffingPlugin(this)];
+    private plugins: Array<Plugin> = [new DiffingPlugin(this), new TemplateParserPlugin(this)];
     eventEmitter = new EventEmitter();
     constructor(state: State, transformers?: StateTransformers){
         super(state, transformers);

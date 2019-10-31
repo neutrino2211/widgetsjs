@@ -3,15 +3,7 @@ import "chromedriver"
 import * as path from "path";
 import * as assert from "assert";
 import * as selenium from "selenium-webdriver";
-import * as chrome from "selenium-webdriver/chrome"
-
-function timeout(time: number): Promise<void>{
-    return new Promise((res, rej)=>{
-        setTimeout(()=>{
-            res();
-        }, time)
-    })
-}
+import * as chrome from "selenium-webdriver/chrome";
 
 describe("widgetsjs", ()=>{
     const driver = new selenium.Builder().forBrowser("chrome")
@@ -126,6 +118,22 @@ describe("widgetsjs", ()=>{
             await btn.click()
             assert.equal(await h1.getText(),"WIDGETS")
             assert.equal(await input.getAttribute("value"), "WIDGETS")
+        })
+    })
+
+    describe("#children", ()=>{
+        let widget: selenium.WebElement;
+
+        beforeEach((done)=>{
+            driver.findElement(selenium.By.tagName("child-widget")).then(w => {
+                widget = w;
+                done()
+            })
+        })
+
+        it("should render children", async()=>{
+            const innerText = await widget.getText()
+            assert.equal(innerText, "Child is: Hey")
         })
     })
 
