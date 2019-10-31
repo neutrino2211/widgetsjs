@@ -1,6 +1,6 @@
 {
   "name": "widgetsjs",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "A tiny library for building websites with a widget based component system",
   "main": "dist/index.js",
   "scripts": {
