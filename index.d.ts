@@ -8,9 +8,11 @@ declare module "widgetsjs" {
         public state: State;
         public root: HTMLElement;
         public transformers: StateTransformers;
+        public widgetChildren: string;
         constructor(state: State, transformers?: StateTransformers);
         protected transformState(transformers: StateTransformers, state: State): void;
-        public $ref(id: string): Widget;
+        public $ref<T>(id: string): T;
+        public $child<T>(id: string): T;
         public onMount(): void;
         public onDismount(): void;
         public render(state: State): string;

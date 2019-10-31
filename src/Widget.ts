@@ -19,12 +19,12 @@ export class Widget extends Component {
         })
     }
 
-    $ref(name: string): Widget {
-        return getRef(name);
+    $ref<T>(name: string): T {
+        return <any>getRef(name);
     }
 
-    $child(selector: string): HTMLElement {
-        return this.root.querySelector(selector);
+    $child<T>(selector: string): T {
+        return <any>this.root.querySelector(selector);
     }
 
     public onMount(){}

@@ -1,9 +1,13 @@
 import { State, StateTransformers } from "./utils";
 import { EventEmitter } from "events";
 import { Widget } from "./Widget";
+import { DiffingPlugin } from "./plugins/diffing";
+import { Plugin } from "./plugins/plugin";
+import { TemplateParserPlugin } from "./plugins/templatePraser";
 
 export class StatefulWidget extends Widget {
     protected cachedState: State;
+    private plugins: Array<Plugin> = [new DiffingPlugin(this), new TemplateParserPlugin(this)];
     eventEmitter = new EventEmitter();
     constructor(state: State, transformers?: StateTransformers){
         super(state, transformers);
@@ -22,17 +26,22 @@ export class StatefulWidget extends Widget {
         let componentState = Object.assign({}, this.state)
         state = Object.assign(componentState, state);
         this.beforeRender()
-        this.innerHTML = this._render(state);
+        this.runPlugins(this._render(state));
         this.on('render',(state: State)=>{
             componentState = Object.assign({}, this.cachedState || this.state)
             let _state = Object.assign(state, componentState);
             this.beforeRender()
-            this.innerHTML = this._render(_state);
-            this.emit('load')
+            this.runPlugins(this._render(_state));
             this.afterRender()
         })
         this.emit('load')
         this.afterRender()
+    }
+
+    private runPlugins(innerHTML: string){
+        for(const plugin of this.plugins){
+            plugin.run(innerHTML)
+        }
     }
 
     get emitter(){

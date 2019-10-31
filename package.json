@@ -1,16 +1,26 @@
 {
   "name": "widgetsjs",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "A tiny library for building websites with a widget based component system",
-  "main": "dist/index,js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "cd test && parcel build components/index.html --public-url . && mocha --require ts-node/register --timeout 999999 **/*.spec.ts && npm run clean",
     "build": "tsc",
     "publish-nightly": "npm publish --tag nightly",
     "bump-nightly": "bump prerelease --preid nightly --push --commit --tag",
+    "nightly": "npm run build && npm run bump-nightly && npm run clean && npm run publish-nightly",
+    "publish-alpha": "npm publish --tag alpha",
+    "bump-alpha": "bump prerelease --preid alpha --push --commit --tag",
+    "alpha": "npm run build && npm run bump-alpha && npm run clean && npm run publish-alpha",
+    "publish-beta": "npm publish --tag beta",
+    "bump-beta": "bump prerelease --preid beta --push --commit --tag",
+    "beta": "npm run build && npm run bump-beta && npm run clean && npm run publish-beta",
     "bump-patch": "bump patch --push --commit --tag",
-    "nightly": "npm run build && npm run bump-nightly && npm run publish-nightly",
-    "patch": "npm run build && npm run bump-patch && npm publish",
+    "patch": "npm run build && npm run bump-patch && npm run clean && npm publish",
+    "bump-minor": "bump minor --push --commit --tag",
+    "minor": "npm run build && npm run bump-minor && npm run clean && npm publish",
+    "bump-major": "bump major --push --commit --tag",
+    "major": "npm run build && npm run bump-major && npm run clean && npm publish",
     "clean": "ts-node scripts/clean.ts all",
     "clean-artifacts": "ts-node scripts/clean.ts artifacts"
   },
@@ -34,16 +44,18 @@
     "@types/mocha": "^5.2.6",
     "@types/node": "^12.0.2",
     "@types/selenium-webdriver": "^4.0.0",
-    "chromedriver": "^74.0.0",
+    "chromedriver": "^2.41.0",
     "fs-extra": "^8.0.1",
     "mocha": "^6.1.4",
     "parcel": "^1.12.3",
     "selenium-webdriver": "^4.0.0-alpha.1",
     "ts-node": "^8.1.0",
     "typescript": "^3.4.5",
-    "version-bump-prompt": "^5.0.1"
+    "version-bump-prompt": "^5.0.1",
+    "webdriver-manager": "^12.1.7"
   },
   "dependencies": {
+    "diffhtml": "^1.0.0-beta.10",
     "events": "^3.0.0"
   }
 }

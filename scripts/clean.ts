@@ -20,6 +20,7 @@ const cleaners = {
 
     all: function(){
         this["tests"]();
+        rimraf.sync(join(process.cwd(), ".cache"))
     },
 
     artifacts: function(){

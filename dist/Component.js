@@ -24,6 +24,7 @@ var Component = /** @class */ (function (_super) {
         if (this.getAttribute('$ref')) {
             utils_1.registerRef(this.getAttribute('$ref'), this.component);
         }
+        this.widgetChildren = this.innerHTML;
     };
     Component.prototype.disconnectedCallback = function () {
         this.component.onDismount();
