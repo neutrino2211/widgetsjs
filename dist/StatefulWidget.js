@@ -16,12 +16,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var events_1 = require("events");
 var Widget_1 = require("./Widget");
 var diffing_1 = require("./plugins/diffing");
-var templatePraser_1 = require("./plugins/templatePraser");
+var templateParser_1 = require("./plugins/templateParser");
 var StatefulWidget = /** @class */ (function (_super) {
     __extends(StatefulWidget, _super);
     function StatefulWidget(state, transformers) {
         var _this = _super.call(this, state, transformers) || this;
-        _this.plugins = [new diffing_1.DiffingPlugin(_this), new templatePraser_1.TemplateParserPlugin(_this)];
+        _this.plugins = [new diffing_1.DiffingPlugin(_this), new templateParser_1.TemplateParserPlugin(_this)];
         _this.eventEmitter = new events_1.EventEmitter();
         _this.setState(state);
         _this.on('load', _this.onMount);
