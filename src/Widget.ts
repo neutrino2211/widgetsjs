@@ -1,4 +1,4 @@
-import { Component } from "./component";
+import { Component } from "./Component";
 import { State, StateTransformers, getRef } from "./utils";
 
 export class Widget extends Component {

@@ -3,7 +3,7 @@ import { EventEmitter } from "events";
 import { Widget } from "./Widget";
 import { DiffingPlugin } from "./plugins/diffing";
 import { Plugin } from "./plugins/plugin";
-import { TemplateParserPlugin } from "./plugins/templatePraser";
+import { TemplateParserPlugin } from "./plugins/templateParser";
 
 export class StatefulWidget extends Widget {
     protected cachedState: State;

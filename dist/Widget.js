@@ -13,7 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var component_1 = require("./component");
+var Component_1 = require("./Component");
 var utils_1 = require("./utils");
 var Widget = /** @class */ (function (_super) {
     __extends(Widget, _super);
@@ -49,6 +49,6 @@ var Widget = /** @class */ (function (_super) {
         return '';
     };
     return Widget;
-}(component_1.Component));
+}(Component_1.Component));
 exports.Widget = Widget;
 //# sourceMappingURL=Widget.js.map
