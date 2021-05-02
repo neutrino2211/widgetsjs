@@ -71,3 +71,6 @@ dist
 
 # browser test
 browser-test
+
+# parcel
+.parcel-cache

@@ -12,7 +12,7 @@ export class Component extends BaseComponent {
     }
 
 
-    childrenAvailableCallback(){
+    protected childrenAvailableCallback(){
         if(this.getAttribute('$ref')){
             registerRef(this.getAttribute('$ref'), this.component);
         }
@@ -20,7 +20,7 @@ export class Component extends BaseComponent {
         this.widgetChildren = this.innerHTML;
     }
 
-    disconnectedCallback(){
+    protected disconnectedCallback(){
         this.component.onDismount();
     }
 }

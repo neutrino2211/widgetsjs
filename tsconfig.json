@@ -10,7 +10,8 @@
         "noImplicitAny": false,
         "lib": ["es2015","dom"],
         "outDir": "dist",
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "declaration": true
     },
     "include": ["src/**/*"]
 }  

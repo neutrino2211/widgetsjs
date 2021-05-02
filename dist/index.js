@@ -1,4 +1,7 @@
 "use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
 Object.defineProperty(exports, "__esModule", { value: true });
 var shim_1 = require("./shim");
 shim_1.shim();
@@ -11,4 +14,5 @@ var StatefulWidget_1 = require("./StatefulWidget");
 exports.StatefulWidget = StatefulWidget_1.StatefulWidget;
 var StatelessWidget_1 = require("./StatelessWidget");
 exports.StatelessWidget = StatelessWidget_1.StatelessWidget;
+__export(require("./functionalComponent"));
 //# sourceMappingURL=index.js.map

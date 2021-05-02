@@ -12,10 +12,16 @@ export class StatefulWidget extends Widget {
     constructor(state: State, transformers?: StateTransformers){
         super(state, transformers);
         this.setState(state);
-        this.on('load',this.onMount)
+        this.on('load',this._onMount)
     }
 
-    connectedCallback(){
+
+    // Proxy function to allow function components
+    private _onMount() {
+        this.onMount();
+    }
+
+    private connectedCallback(){
         this.setup();
         this.root = this;
         let state: State = {};

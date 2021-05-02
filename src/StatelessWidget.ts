@@ -7,7 +7,7 @@ export class StatelessWidget extends Widget {
         super(state, transformers);
     }
 
-    connectedCallback(){
+    private connectedCallback(){
         this.setup();
         this.root = this;
         let state: State = {};

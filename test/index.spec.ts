@@ -10,7 +10,8 @@ describe("widgetsjs", ()=>{
     .setChromeOptions(new chrome.Options().headless())
     .build();
     beforeEach((done)=>{
-        driver.get("file:///"+path.join(process.cwd(),"dist/index.html")).then(()=>{
+        console.log("file:///"+path.join(process.cwd(),"dist/index.html"))
+        driver.get("http://localhost:1234/").then(()=>{
             done();
         })    
     })

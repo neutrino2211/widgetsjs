@@ -30,7 +30,7 @@ export class Widget extends Component {
     public onMount(){}
     public onDismount(){}
 
-    _render(state?: State): string{
+    protected _render(state?: State): string{
         this.transformers && this.transformState(this.transformers, state);
         if(state){
             this.state = state;

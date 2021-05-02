@@ -24,9 +24,13 @@ var StatefulWidget = /** @class */ (function (_super) {
         _this.plugins = [new diffing_1.DiffingPlugin(_this), new templateParser_1.TemplateParserPlugin(_this)];
         _this.eventEmitter = new events_1.EventEmitter();
         _this.setState(state);
-        _this.on('load', _this.onMount);
+        _this.on('load', _this._onMount);
         return _this;
     }
+    // Proxy function to allow function components
+    StatefulWidget.prototype._onMount = function () {
+        this.onMount();
+    };
     StatefulWidget.prototype.connectedCallback = function () {
         var _this = this;
         this.setup();

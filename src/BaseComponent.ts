@@ -5,7 +5,7 @@ export class BaseComponent extends HTMLElement {
         super()
     }
   
-    setup() {
+    protected setup() {
         // collect the parentNodes
         let el: Node = this;
         while (el.parentNode) {
@@ -30,5 +30,5 @@ export class BaseComponent extends HTMLElement {
         }
     }
 
-    childrenAvailableCallback(){}
+    protected childrenAvailableCallback(){}
 }
