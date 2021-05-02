@@ -1,10 +1,10 @@
 {
   "name": "widgetsjs",
-  "version": "0.2.1-alpha.1",
+  "version": "0.2.1-alpha.2",
   "description": "A tiny library for building websites with a widget based component system",
   "main": "dist/index.js",
   "scripts": {
-    "test": "cd test && parcel build components/index.html --public-url . && mocha --require ts-node/register --timeout 999999 **/*.spec.ts && npm run clean",
+    "test": "cd test && parcel build components/index.html --public-url . && mocha --require ts-node/register --timeout 999999 **/*.spec.ts && cd .. && npm run clean",
     "build": "tsc",
     "publish-nightly": "npm publish --tag nightly",
     "bump-nightly": "bump prerelease --preid nightly --push --commit --tag",
@@ -42,12 +42,12 @@
   "devDependencies": {
     "@types/fs-extra": "^7.0.0",
     "@types/mocha": "^5.2.6",
-    "@types/node": "^12.0.2",
+    "@types/node": "^12.20.7",
     "@types/selenium-webdriver": "^4.0.0",
-    "chromedriver": "^2.41.0",
+    "chromedriver": "^2.46.0",
     "fs-extra": "^8.0.1",
     "mocha": "^8.3.2",
-    "parcel": "^1.12.4",
+    "parcel": "^2.0.0-beta.2",
     "selenium-webdriver": "^4.0.0-alpha.1",
     "ts-node": "^8.1.0",
     "typescript": "^3.4.5",
