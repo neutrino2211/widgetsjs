@@ -7,7 +7,7 @@ import { TemplateParserPlugin } from "./plugins/templateParser";
 
 export class StatefulWidget extends Widget {
     protected cachedState: State;
-    private plugins: Array<Plugin> = [new DiffingPlugin(this), new TemplateParserPlugin(this)];
+    protected plugins: Array<Plugin> = [new DiffingPlugin(this)];
     eventEmitter = new EventEmitter();
     constructor(state: State, transformers?: StateTransformers){
         super(state, transformers);
