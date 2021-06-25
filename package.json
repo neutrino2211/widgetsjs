@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "cd test && parcel build components/index.html --public-url . && mocha --require ts-node/register --timeout 999999 **/*.spec.ts && cd .. && npm run clean",
-    "build": "tsc",
+    "build": "tsc && browserify dist/index.js -o dist/web/index.js",
     "publish-nightly": "npm publish --tag nightly",
     "bump-nightly": "bump prerelease --preid nightly --push --commit --tag",
     "nightly": "npm run build && npm run bump-nightly && npm run clean && npm run publish-nightly",
