@@ -46,7 +46,7 @@
     "@types/selenium-webdriver": "^4.0.0",
     "chromedriver": "^2.46.0",
     "fs-extra": "^8.0.1",
-    "mocha": "^8.3.2",
+    "mocha": "^10.2.0",
     "parcel": "^2.0.0-nightly.729",
     "selenium-webdriver": "^4.0.0-alpha.1",
     "ts-node": "^8.1.0",
